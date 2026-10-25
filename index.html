@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, videographer, film restoration artist, motion designer and graphic designer.">
+  <title>Lord Vincent Yana — Editor & Visual Storyteller</title>
+  <style>
+    :root{--bg:#090909;--panel:#111;--text:#f4f1eb;--muted:#a7a39d;--line:#2b2a28;--accent:#d8ff3e;--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:24px;color:#d1cec8;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .navlinks a:hover,.text-link:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px}
+    .hero{padding:92px 0 58px;min-height:600px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:44px}
+    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    h1{font-size:clamp(48px,7.4vw,100px);line-height:.94;letter-spacing:-.075em;margin:20px 0 24px;font-weight:850}
+    h1 em{font-style:normal;color:var(--muted)}
+    .hero-copy{max-width:560px;color:#c2beb7;font-size:17px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;transition:.2s}
+    .btn.primary{background:var(--accent);color:#101010;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
+    .hero-art{position:relative;min-height:410px;background:#171715;overflow:hidden;border:1px solid #30302b}
+    .hero-art img{width:100%;height:410px;object-fit:cover;filter:grayscale(35%);opacity:.8}
+    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
+    .art-label{position:absolute;z-index:1;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .art-label strong{color:var(--accent)}
+    .ticker{border-block:1px solid var(--line);padding:15px 0;color:#c8c4bc;font-size:10px;letter-spacing:.2em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+    .ticker span{margin-right:32px}.ticker b{color:var(--accent);margin-right:32px}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:32px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.06em;margin:10px 0 0}
+    .section-head p{max-width:400px;color:var(--muted);font-size:14px;margin:0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project{background:var(--panel);border:1px solid var(--line);min-width:0}
+    .project-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;background:#20201d}
+    .project-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:transform .5s,filter .5s}
+    .project:hover .project-thumb img{transform:scale(1.04);filter:saturate(1)}
+    .project-thumb .num{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.75);padding:6px 9px;font-size:10px;letter-spacing:.12em}
+    .project-info{padding:19px 20px 21px}
+    .project-meta{display:flex;justify-content:space-between;gap:12px;color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+    .project h3{font-size:23px;letter-spacing:-.04em;margin:10px 0 6px}
+    .project p{font-size:13px;color:var(--muted);margin:0}
+    .project-link{display:inline-block;margin-top:15px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #666;padding-bottom:3px}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;border-block:1px solid var(--line);background:#0d0d0c}
+    .about h2{font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.065em;margin:14px 0}
+    .about-copy{color:#c0bcb4;font-size:16px;max-width:700px}
+    .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+    .skill{border:1px solid #393934;padding:9px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#e6e3dc}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+    .process{padding:22px;border-right:1px solid var(--line)}.process:last-child{border:0}
+    .process .n{color:var(--accent);font-size:11px;letter-spacing:.15em}
+    .process h3{font-size:18px;margin:28px 0 8px}.process p{font-size:12px;color:var(--muted);margin:0}
+    .contact{padding:76px 0 86px;background:var(--accent);color:#101010}
+    .contact .eyebrow{color:#313b0c}.contact h2{font-size:clamp(44px,7vw,88px);letter-spacing:-.07em;line-height:.94;margin:14px 0 20px}
+    .contact p{max-width:560px;color:#2f331e}.contact .btn{border-color:#101010;color:#101010}.contact .btn.primary{background:#101010;color:var(--accent)}
+    footer{padding:22px 0;color:#8f8b84;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+    footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .note{font-size:12px;color:#8f8b84;margin-top:22px}
+    @media(max-width:760px){.nav-inner{height:64px}.menu{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:#101010;border-bottom:1px solid var(--line);flex-direction:column;gap:17px}.navlinks.open{display:flex}.hero{padding-top:58px;grid-template-columns:1fr;gap:30px;min-height:0}.hero-art,.hero-art img{height:300px;min-height:300px}.section-head{align-items:start;flex-direction:column}.project-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:15px}.process-grid{grid-template-columns:repeat(2,1fr)}.process:nth-child(2){border-right:0}.process:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:66px 0}}
+    @media(max-width:420px){.wrap{width:calc(100% - 30px)}h1{font-size:49px}.process{padding:16px}.project-info{padding:16px}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">LVY<span>®</span> / PORTFOLIO</a>
+      <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">MENU +</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="#work">Selected work</a><a href="#about">About</a><a href="#services">Expertise</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Independent creative professional · Philippines</div>
+        <h1>LORD<br>VINCENT<br><em>YANA.</em></h1>
+        <p class="hero-copy">Video editor and visual storyteller shaping raw footage into stories with rhythm, atmosphere, and purpose. From cinematic edits to film restoration, motion graphics, and design.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore selected work ↘</a><a class="btn" href="#contact">Get in touch ↗</a></div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85" alt="Cinema screen in a dark theater">
+        <div class="art-label"><span>Post-production / Visual storytelling</span><strong>Available for projects</strong></div>
+      </div>
+    </section>
+
+    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Film restoration</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span><b>✳</b><span>Graphic design</span></div></div>
+
+    <section class="wrap" id="work">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / Selected work</div><h2>Frames that<br>tell a story.</h2></div>
+        <p>A selection of creative disciplines and projects. Replace these sample cards with your own best work, reels, and case studies.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85" alt="Video production camera setup"><span class="num">PROJECT 01</span></div>
+          <div class="project-info"><div class="project-meta"><span>Editing / YouTube</span><span>01—04</span></div><h3>Cinematic Video Editing</h3><p>Vlogs, branded content, short-form storytelling, pacing, sound, and finishing.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Watch project ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85" alt="Rows of seats in a cinema"><span class="num">PROJECT 02</span></div>
+          <div class="project-info"><div class="project-meta"><span>Restoration / Color</span><span>02—04</span></div><h3>Film Restoration</h3><p>Image cleanup, color grading, stabilization, pacing, and visual enhancement for classic films.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">View restoration ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1000&q=85" alt="Camera and filmmaking equipment"><span class="num">PROJECT 03</span></div>
+          <div class="project-info"><div class="project-meta"><span>Production / Camera</span><span>03—04</span></div><h3>Videography</h3><p>On-location coverage, visual composition, camera operation, and story-driven footage.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Watch project ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85" alt="Retro visual design and color"><span class="num">PROJECT 04</span></div>
+          <div class="project-info"><div class="project-meta"><span>Motion / Graphic design</span><span>04—04</span></div><h3>Motion & Visual Design</h3><p>Animated titles, social graphics, thumbnails, posters, and supporting visual assets.</p><a class="project-link" href="https://www.behance.net/" target="_blank" rel="noreferrer">View design work ↗</a></div>
+        </article>
+      </div>
+      <p class="note">Template note: project images and links above are examples. Replace them with your own authorized work before sharing this portfolio professionally.</p>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap" style="display:contents"></div>
+      <div class="wrap"><div class="eyebrow">02 / About</div><h2>Craft first.<br>Story always.</h2></div>
+      <div class="wrap about-copy">
+        <p>I’m Lord Vincent Yana, a video editor and creative professional focused on turning footage into clear, engaging visual stories. My work spans editing, videography, classic film restoration, color grading, animation, and graphic design.</p>
+        <p>I care about the details that make a piece feel finished: the timing of a cut, the balance of a grade, the clarity of a title, and the emotional flow from one shot to the next.</p>
+        <div class="skills"><span class="skill">DaVinci Resolve</span><span class="skill">Adobe Premiere Pro</span><span class="skill">Photoshop</span><span class="skill">Color Grading</span><span class="skill">Motion Graphics</span><span class="skill">Storytelling</span></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head"><div><div class="eyebrow">03 / Expertise</div><h2>From raw footage<br>to final frame.</h2></div><p>Flexible creative support for teams, brands, creators, and production workflows.</p></div>
+      <div class="process-grid">
+        <div class="process"><div class="n">01 / EDIT</div><h3>Video Editing</h3><p>Story structure, pacing, sound, captions, revisions, and delivery.</p></div>
+        <div class="process"><div class="n">02 / RESTORE</div><h3>Film Restoration</h3><p>Cleanup, color correction, stabilization, and careful visual refinement.</p></div>
+        <div class="process"><div class="n">03 / CREATE</div><h3>Motion & Design</h3><p>Animated titles, graphic assets, posters, thumbnails, and social content.</p></div>
+        <div class="process"><div class="n">04 / CAPTURE</div><h3>Videography</h3><p>Camera work and purposeful footage captured for the edit.</p></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">04 / Contact</div>
+        <h2>Have a story<br>to tell?</h2>
+        <p>I'm open to long-term opportunities, creative collaborations, and projects where thoughtful editing and visual storytelling matter.</p>
+        <div class="actions"><a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube ↗</a></div>
+        <p class="note" style="color:#444a2c">Before publishing: replace the sample email and social links with your real contact details.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year"></span> Lord Vincent Yana</span><span>Made with intention. Hosted free on GitHub Pages.</span><a href="#home">Back to top ↑</a></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navlinks=document.getElementById('navlinks');
+    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open?'true':'false');menuBtn.textContent=open?'CLOSE −':'MENU +'});
+    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='MENU +'}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
