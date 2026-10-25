@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090909">
   <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, videographer, film restoration artist, motion designer and graphic designer.">
-  <title>Lord Vincent Yana — Editor & Visual Storyteller</title>
+  <title>Lord Vincent Yana — Video Editor & Graphics Designer</title>
   <style>
     :root{--bg:#090909;--panel:#111;--text:#f4f1eb;--muted:#a7a39d;--line:#2b2a28;--accent:#d8ff3e;--max:1180px}
     *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:82px}
@@ -49,6 +49,24 @@
     .project h3{font-size:23px;letter-spacing:-.04em;margin:10px 0 6px}
     .project p{font-size:13px;color:var(--muted);margin:0}
     .project-link{display:inline-block;margin-top:15px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #666;padding-bottom:3px}
+
+    .work-subhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:44px 0 18px}
+    .work-subhead h3{font-size:clamp(23px,3vw,34px);letter-spacing:-.045em;margin:0}
+    .work-subhead p{font-size:12px;color:var(--muted);margin:0}
+    .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .project-thumb a{display:block;width:100%;height:100%;position:relative}
+    .project-thumb img{width:100%;height:100%;object-fit:cover}
+    .project-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.55);color:white;font-size:18px;padding-left:3px}
+    .short-thumb{aspect-ratio:9/12;max-height:390px;display:flex;align-items:end;padding:22px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 25%,#4b4635 0%,#24231f 35%,#101010 78%)}
+    .short-thumb:before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 10%,rgba(0,0,0,.2) 45%,#090909 100%);border:1px solid rgba(255,255,255,.06)}
+    .short-thumb .short-label{position:relative;z-index:1}
+    .short-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.55);color:white;font-size:18px;padding-left:3px}
+    .short-thumb small{display:block;color:var(--accent);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .short-thumb strong{display:block;font-size:clamp(21px,2.5vw,30px);line-height:1.05;letter-spacing:-.04em;margin-top:8px}
+    .short-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .note a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.project-grid,.short-grid{grid-template-columns:1fr 1fr}.work-subhead{align-items:start;flex-direction:column}}
+    @media(max-width:480px){.project-grid,.short-grid{grid-template-columns:1fr}.short-thumb{aspect-ratio:16/9;max-height:none}}
     .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;border-block:1px solid var(--line);background:#0d0d0c}
     .about h2{font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.065em;margin:14px 0}
     .about-copy{color:#c0bcb4;font-size:16px;max-width:700px}
@@ -98,27 +116,59 @@
     <section class="wrap" id="work">
       <div class="section-head">
         <div><div class="eyebrow">01 / Selected work</div><h2>Frames that<br>tell a story.</h2></div>
-        <p>A selection of creative disciplines and projects. Replace these sample cards with your own best work, reels, and case studies.</p>
+        <p>A selection of projects I've edited. These are samples of my work, not my complete portfolio; more projects can be added over time.</p>
+      </div>
+
+      <div class="work-subhead">
+        <h3>Long-form video</h3>
+        <p>6 selected YouTube projects</p>
       </div>
       <div class="project-grid">
         <article class="project">
-          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1000&q=85" alt="Video production camera setup"><span class="num">PROJECT 01</span></div>
-          <div class="project-info"><div class="project-meta"><span>Editing / YouTube</span><span>01—04</span></div><h3>Cinematic Video Editing</h3><p>Vlogs, branded content, short-form storytelling, pacing, sound, and finishing.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Watch project ↗</a></div>
+          <div class="project-thumb"><a href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng G video on YouTube"><img src="https://img.youtube.com/vi/eQm87oFM4N4/hqdefault.jpg" alt="YouTube thumbnail for a Pareng G video" loading="lazy"><span class="num">LONG-FORM 01</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng G</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
-          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85" alt="Rows of seats in a cinema"><span class="num">PROJECT 02</span></div>
-          <div class="project-info"><div class="project-meta"><span>Restoration / Color</span><span>02—04</span></div><h3>Film Restoration</h3><p>Image cleanup, color grading, stabilization, pacing, and visual enhancement for classic films.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">View restoration ↗</a></div>
+          <div class="project-thumb"><a href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 1 on YouTube"><img src="https://img.youtube.com/vi/g2f7cy0VOWI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 02</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 01</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
-          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1000&q=85" alt="Camera and filmmaking equipment"><span class="num">PROJECT 03</span></div>
-          <div class="project-info"><div class="project-meta"><span>Production / Camera</span><span>03—04</span></div><h3>Videography</h3><p>On-location coverage, visual composition, camera operation, and story-driven footage.</p><a class="project-link" href="https://www.youtube.com/" target="_blank" rel="noreferrer">Watch project ↗</a></div>
+          <div class="project-thumb"><a href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 2 on YouTube"><img src="https://img.youtube.com/vi/pJhAQ91CZhI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 03</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 02</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
-          <div class="project-thumb"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1000&q=85" alt="Retro visual design and color"><span class="num">PROJECT 04</span></div>
-          <div class="project-info"><div class="project-meta"><span>Motion / Graphic design</span><span>04—04</span></div><h3>Motion & Visual Design</h3><p>Animated titles, social graphics, thumbnails, posters, and supporting visual assets.</p><a class="project-link" href="https://www.behance.net/" target="_blank" rel="noreferrer">View design work ↗</a></div>
+          <div class="project-thumb"><a href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 3 on YouTube"><img src="https://img.youtube.com/vi/pfJXse28hbc/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 04</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 03</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 1 on YouTube"><img src="https://img.youtube.com/vi/kNLEOj-5TYc/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 05</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 01</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 2 on YouTube"><img src="https://img.youtube.com/vi/3psVIN8pJ80/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 06</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 02</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
       </div>
-      <p class="note">Template note: project images and links above are examples. Replace them with your own authorized work before sharing this portfolio professionally.</p>
+
+      <div class="work-subhead">
+        <h3>Short-form video</h3>
+        <p>3 selected Facebook Reels</p>
+      </div>
+      <div class="project-grid short-grid">
+        <article class="project">
+          <a href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 1 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 01</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
+          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
+        </article>
+        <article class="project">
+          <a href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 2 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 02</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
+          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 02</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
+        </article>
+        <article class="project">
+          <a href="https://web.facebook.com/reel/1333322361732000" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 3 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 03</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
+          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 03</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1333322361732000" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
+        </article>
+      </div>
+      <p class="note">These are selected samples, not my complete portfolio. Additional work, including freelance projects, can be shared upon request. Video thumbnails are loaded from YouTube; Facebook Reel cards link directly to Facebook.</p>
     </section>
 
     <section class="about" id="about">
