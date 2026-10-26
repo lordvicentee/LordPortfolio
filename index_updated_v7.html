@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, color grader, motion designer, videographer and graphic designer.">
+  <title>Lord Vincent Yana — Video Editor & Graphics Designer</title>
+  <style>
+    :root{--bg:#090909;--panel:#111;--text:#f4f1eb;--muted:#a7a39d;--line:#2b2a28;--accent:#d8ff3e;--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.09)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:24px;color:#d1cec8;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .navlinks a:hover,.text-link:hover{color:var(--accent)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 11px}
+    .hero{padding:92px 0 58px;min-height:600px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:44px}
+    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:700}
+    h1{font-size:clamp(48px,7.4vw,100px);line-height:.94;letter-spacing:-.075em;margin:20px 0 24px;font-weight:850}
+    h1 em{font-style:normal;color:var(--muted)}
+    .hero-copy{max-width:560px;color:#c2beb7;font-size:17px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;transition:.2s}
+    .btn.primary{background:var(--accent);color:#101010;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
+    .hero-art{position:relative;min-height:410px;height:410px;background:#171715;overflow:hidden;border:1px solid #30302b;isolation:isolate}
+    .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(22%);opacity:.82;transition:opacity .42s ease,filter .42s ease;will-change:opacity;pointer-events:none}
+    .hero-art img.hero-photo-hover{opacity:0;filter:grayscale(8%)}
+    .hero-art:after{content:"";position:absolute;z-index:2;pointer-events:none;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
+    .hero-art:before{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;background:#f1f0e9;opacity:0}
+    .hero-art:hover img.hero-photo-hover,.hero-art:focus-within img.hero-photo-hover{opacity:.92}
+    .hero-art:hover img.hero-photo-base,.hero-art:focus-within img.hero-photo-base{opacity:0}
+    .hero-art:hover:before,.hero-art:focus-within:before{animation:photo-flash .42s ease-out}
+    @keyframes photo-flash{0%{opacity:0}18%{opacity:.13}100%{opacity:0}}
+    @media (prefers-reduced-motion:reduce){.hero-art img{transition:none}.hero-art:hover:before{animation:none}}
+    .art-label{position:absolute;z-index:1;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+    .art-label strong{color:var(--accent)}
+    .ticker{border-block:1px solid var(--line);padding:15px 0;color:#c8c4bc;font-size:10px;letter-spacing:.2em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+    .ticker span{margin-right:32px}.ticker b{color:var(--accent);margin-right:32px}
+    section{padding:92px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:32px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.06em;margin:10px 0 0}
+    .section-head p{max-width:400px;color:var(--muted);font-size:14px;margin:0}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project{background:var(--panel);border:1px solid var(--line);min-width:0}
+    .project-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;background:#20201d}
+    .project-thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:transform .5s,filter .5s}
+    .project:hover .project-thumb img{transform:scale(1.04);filter:saturate(1)}
+    .project-thumb .num{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.75);padding:6px 9px;font-size:10px;letter-spacing:.12em}
+    .project-info{padding:19px 20px 21px}
+    .project-meta{display:flex;justify-content:space-between;gap:12px;color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.14em}
+    .project h3{font-size:23px;letter-spacing:-.04em;margin:10px 0 6px}
+    .project p{font-size:13px;color:var(--muted);margin:0}
+    .timeline-preview{margin-top:16px;border:1px solid #353530;background:#090909;padding:6px}
+    .timeline-preview img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center;display:block}
+    .timeline-preview small{display:block;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin:6px 2px 1px}
+    .project-link{display:inline-block;margin-top:15px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #666;padding-bottom:3px}
+
+    .work-subhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:44px 0 18px}
+    .work-subhead h3{font-size:clamp(23px,3vw,34px);letter-spacing:-.045em;margin:0}
+    .work-subhead p{font-size:12px;color:var(--muted);margin:0}
+    .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .project-thumb a{display:block;width:100%;height:100%;position:relative}
+    .project-thumb img{width:100%;height:100%;object-fit:cover}
+    .project-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.55);color:white;font-size:18px;padding-left:3px}
+    .short-thumb{aspect-ratio:9/12;max-height:390px;display:flex;align-items:end;padding:22px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 70% 25%,#4b4635 0%,#24231f 35%,#101010 78%)}
+    .short-thumb:before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 10%,rgba(0,0,0,.2) 45%,#090909 100%);border:1px solid rgba(255,255,255,.06)}
+    .short-thumb .short-label{position:relative;z-index:1}
+    .short-thumb .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.78);border:1px solid rgba(255,255,255,.55);color:white;font-size:18px;padding-left:3px}
+    .short-thumb small{display:block;color:var(--accent);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .short-thumb strong{display:block;font-size:clamp(21px,2.5vw,30px);line-height:1.05;letter-spacing:-.04em;margin-top:8px}
+    .short-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .note a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:760px){.project-grid,.short-grid{grid-template-columns:1fr 1fr}.work-subhead{align-items:start;flex-direction:column}}
+    @media(max-width:480px){.project-grid,.short-grid{grid-template-columns:1fr}.short-thumb{aspect-ratio:16/9;max-height:none}}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;border-block:1px solid var(--line);background:#0d0d0c}
+    .about h2{font-size:clamp(38px,5vw,64px);line-height:.98;letter-spacing:-.065em;margin:14px 0}
+    .about-copy{color:#c0bcb4;font-size:16px;max-width:700px}
+    .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+    .skill{border:1px solid #393934;padding:9px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#e6e3dc}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
+    .process{padding:22px;border-right:1px solid var(--line)}.process:last-child{border:0}
+    .process .n{color:var(--accent);font-size:11px;letter-spacing:.15em}
+    .process h3{font-size:18px;margin:28px 0 8px}.process p{font-size:12px;color:var(--muted);margin:0}
+    .contact{padding:76px 0 86px;background:var(--accent);color:#101010}
+    .contact .eyebrow{color:#313b0c}.contact h2{font-size:clamp(44px,7vw,88px);letter-spacing:-.07em;line-height:.94;margin:14px 0 20px}
+    .contact p{max-width:560px;color:#2f331e}.contact .btn{border-color:#101010;color:#101010}.contact .btn.primary{background:#101010;color:var(--accent)}
+    footer{padding:22px 0;color:#8f8b84;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+    footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .note{font-size:12px;color:#8f8b84;margin-top:22px}
+    @media(max-width:760px){.nav-inner{height:64px}.menu{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:#101010;border-bottom:1px solid var(--line);flex-direction:column;gap:17px}.navlinks.open{display:flex}.hero{padding-top:58px;grid-template-columns:1fr;gap:30px;min-height:0}.hero-art,.hero-art img{height:300px;min-height:300px}.section-head{align-items:start;flex-direction:column}.project-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:15px}.process-grid{grid-template-columns:repeat(2,1fr)}.process:nth-child(2){border-right:0}.process:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:66px 0}}
+    @media(max-width:420px){.wrap{width:calc(100% - 30px)}h1{font-size:49px}.process{padding:16px}.project-info{padding:16px}}
+
+    .design-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .design-card{display:block;position:relative;background:var(--panel);border:1px solid var(--line);overflow:hidden}
+    .design-card img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .4s,filter .4s;filter:saturate(.88)}
+    .design-card:hover img{transform:scale(1.035);filter:saturate(1)}
+    .design-caption{display:block;padding:11px 13px;color:#d8d4cc;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--line)}
+    .hero-art:after{background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))}
+    .hero-art img{filter:saturate(.82) brightness(.78);opacity:.72}
+    @media(max-width:760px){.design-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:480px){.design-grid{grid-template-columns:1fr 1fr;gap:10px}.design-caption{font-size:9px;padding:8px}}
+
+    .about{display:block;padding:100px 0}
+    .about-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:65px;align-items:start}
+    .about-copy{min-width:0;max-width:none}
+    .background-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+    .background-item{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0;min-height:120px}
+    .background-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+    .background-item strong{font-size:15px;font-weight:500;color:var(--text)}
+    .background-item small{font-size:12px;line-height:1.5;color:var(--muted)}
+    .tools-section{padding-top:100px;padding-bottom:100px}
+    .tool-category{margin-top:34px}
+    .tool-category h3{font-size:16px;font-weight:500;margin:0 0 16px;color:var(--text)}
+    .tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .tool-card{min-height:92px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:16px;min-width:0;color:var(--text);font-size:13px}
+    .tool-card img{width:25px;height:25px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.88;flex:0 0 25px;position:relative;z-index:1}
+    .tool-monogram{display:flex;align-items:center;justify-content:center;width:25px;height:25px;flex:0 0 25px;border:1px solid var(--accent);color:var(--accent);font-size:9px;font-weight:700;letter-spacing:-.04em}
+    .tool-card span:last-child{line-height:1.35;overflow-wrap:anywhere}
+    @media(max-width:760px){.about-layout{grid-template-columns:1fr;gap:24px}.background-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-section{padding-top:72px;padding-bottom:72px}}
+
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">LVY<span>®</span> / PORTFOLIO</a>
+      <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">MENU +</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="#work">Featured work</a><a href="#thumbnails">Thumbnails</a><a href="#about">About</a><a href="#tools">Tools</a><a href="#services">Expertise</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Independent creative professional · Philippines</div>
+        <h1>LORD<br>VINCENT<br><em>YANA.</em></h1>
+        <p class="hero-copy">Video editor and creative artist working across video, color, motion graphics, and visual design.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a></div>
+      </div>
+      <div class="hero-art" aria-label="Vincent at his workstation and filming with a camera">
+        <img class="hero-photo-base" src="BACK.jpg" alt="Vincent editing footage at his workstation">
+        <img class="hero-photo-hover" src="vincent-videographer.jpg" alt="Vincent filming with a camera">
+      </div>
+    </section>
+
+    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Graphic design</span><b>✳</b><span>Color grading</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span></div></div>
+
+    <section class="wrap" id="work">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / Featured work</div><h2>Frames that<br>tell a story.</h2></div>
+        <p>A showcase of my strongest video editing projects, from long-form storytelling to short-form social content. These examples highlight my approach to pacing, visual storytelling, and creating engaging content. This is a growing portfolio, with more work to be added over time.</p>
+      </div>
+
+      <div class="work-subhead">
+        <h3>Long-form video</h3>
+        <p>7 featured YouTube projects</p>
+      </div>
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng G video on YouTube"><img src="https://img.youtube.com/vi/eQm87oFM4N4/hqdefault.jpg" alt="YouTube thumbnail for a Pareng G video" loading="lazy"><span class="num">LONG-FORM 01</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng G — 01</h3><p>Long-form edit with a detailed multi-track Premiere Pro timeline.</p><div class="timeline-preview"><img src="timeline-pareng-g-01.png" alt="Adobe Premiere Pro timeline for Pareng G long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 1 on YouTube"><img src="https://img.youtube.com/vi/g2f7cy0VOWI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 02</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 01</h3><p>Long-form edit featuring detailed multi-track timeline work.</p><div class="timeline-preview"><img src="timeline-hayb-01.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 2 on YouTube"><img src="https://img.youtube.com/vi/pJhAQ91CZhI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 03</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 02</h3><p>Long-form edit featuring layered video, audio, and effects.</p><div class="timeline-preview"><img src="timeline-hayb-02.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 02" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 3 on YouTube"><img src="https://img.youtube.com/vi/pfJXse28hbc/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 04</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 03</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 1 on YouTube"><img src="https://img.youtube.com/vi/kNLEOj-5TYc/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 05</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 01</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 2 on YouTube"><img src="https://img.youtube.com/vi/3psVIN8pJ80/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 06</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 02</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer" aria-label="Watch additional long-form video on YouTube"><img src="https://img.youtube.com/vi/-xKpyuWM1YU/hqdefault.jpg" alt="YouTube thumbnail for an additional long-form video" loading="lazy"><span class="num">LONG-FORM 07</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Featured Project — 07</h3><p>Additional long-form video editing project.</p><a class="project-link" href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+      </div>
+      <div class="work-subhead">
+        <h3>Short-form video</h3>
+        <p>4 featured Facebook Reels</p>
+      </div>
+      <div class="project-grid short-grid">
+        <article class="project"><a href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 01</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 02</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 02</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 03</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 03</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 04</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 04</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+      </div>
+      <p class="note">These featured projects represent some of my strongest work, not my complete portfolio. More projects can be added over time. YouTube thumbnails load automatically; Facebook Reel cards link directly to Facebook.</p>
+    </section>
+
+    <section class="wrap" id="thumbnails">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Graphic design</div><h2>Posters &amp;<br>thumbnails.</h2></div>
+        <p>Visual concepts built around composition, typography, and a clear idea — from video thumbnails to posters and promotional artwork.</p>
+      </div>
+      <div class="design-grid">
+        <a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_1.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_1.png" alt="Fpj Productions 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 1</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_2.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_2.png" alt="Fpj Productions 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 2</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_3.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_3.png" alt="Fpj Productions 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 3</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_4.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_4.png" alt="Fpj Productions 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_1.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_1.jpg" alt="Gentry 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 1</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_2.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_2.jpg" alt="Gentry 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 2</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_3.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_3.jpg" alt="Gentry 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 3</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_4.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_4.jpg" alt="Gentry 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_5.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_5.jpg" alt="Gentry 5 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 5</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_6.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_6.jpg" alt="Gentry 6 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 6</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-layout">
+        <div class="about-heading">
+          <div class="eyebrow">03 / About</div>
+          <h2>Creative work.<br>Technical roots.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I’m Lord Vincent Yana, a video editor and creative artist working across video, color, motion graphics, photo editing, and graphic design.</p>
+          <p>I graduated with a degree in Computer Engineering and have worked as an IT personnel, supporting computer hardware, software, and technical issues. Alongside that experience, I’ve worked on freelance creative projects and production work.</p>
+          <div class="background-grid">
+            <div class="background-item"><span class="background-label">Education</span><strong>Computer Engineering Graduate</strong></div>
+            <div class="background-item"><span class="background-label">Experience</span><strong>IT Personnel</strong><small>Hardware, software, and technical support</small></div>
+            <div class="background-item"><span class="background-label">Creative work</span><strong>Freelance &amp; Production Projects</strong><small>Video editing, design, and visual content</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap tools-section" id="tools">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / Tools &amp; Resources</div><h2>Tools I work<br>with.</h2></div>
+        <p>Software, creative resources, and AI tools used in my editing and design workflow.</p>
+      </div>
+      <div class="tool-category">
+        <h3>Editing &amp; Design Software</h3>
+        <div class="tool-grid">
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Pr</span><img src="https://cdn.simpleicons.org/adobepremierepro" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Premiere Pro</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ps</span><img src="https://cdn.simpleicons.org/adobephotoshop" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Photoshop</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ae</span><img src="https://cdn.simpleicons.org/adobeaftereffects" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>After Effects</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ai</span><img src="https://cdn.simpleicons.org/adobeillustrator" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Illustrator</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Lr</span><img src="https://cdn.simpleicons.org/adobelightroom" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Lightroom</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">DR</span><img src="https://cdn.simpleicons.org/davinciresolve" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>DaVinci Resolve</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">CC</span><img src="https://cdn.simpleicons.org/capcut" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>CapCut</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ca</span><img src="https://cdn.simpleicons.org/canva" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Canva</span></div>
+        </div>
+      </div>
+      <div class="tool-category">
+        <h3>Stock, AI &amp; Workflow Resources</h3>
+        <div class="tool-grid">
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">A</span><img src="https://cdn.simpleicons.org/artlist" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Artlist</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">E</span><img src="https://cdn.simpleicons.org/envato" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Envato</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">SB</span><img src="https://cdn.simpleicons.org/storyblocks" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Storyblocks</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">11</span><img src="https://cdn.simpleicons.org/elevenlabs" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>ElevenLabs</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">AI</span><img src="https://cdn.simpleicons.org/openai" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>ChatGPT</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">G</span><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Gemini</span></div>
+          <div class="tool-card"><span class="tool-monogram">NLM</span><span>NotebookLM</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">n8n</span><img src="https://cdn.simpleicons.org/n8n" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>n8n</span></div>
+          <div class="tool-card"><span class="tool-monogram">H</span><span>Higgsfield</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">S</span><img src="https://cdn.simpleicons.org/suno" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Suno</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="services">
+      <div class="section-head"><div><div class="eyebrow">05 / Expertise</div><h2>Creative work<br>across formats.</h2></div><p>Selected areas of my work and creative practice.</p></div>
+      <div class="process-grid">
+        <div class="process"><div class="n">01 / EDIT</div><h3>Video Editing</h3><p>Story structure, pacing, sound, captions, revisions, and delivery.</p></div>
+        <div class="process"><div class="n">02 / DESIGN</div><h3>Graphic Design</h3><p>Posters, thumbnails, layouts, typography, and visual concepts.</p></div>
+        <div class="process"><div class="n">03 / GRADE</div><h3>Color Grading</h3><p>Balancing color and contrast to shape the mood and look of each project.</p></div>
+        <div class="process"><div class="n">04 / MOTION</div><h3>Motion & Design</h3><p>Animated titles, motion graphics, and design elements for video.</p></div>
+      </div>
+      <p class="note">Additional experience includes videography and classic film restoration.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">06 / Contact</div>
+        <h2>Contact<br>details.</h2>
+        
+        <div class="actions"><a class="btn primary" href="mailto:lordvincentyana12@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/lordvincentyana/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+        
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year"></span> Lord Vincent Yana</span><span>Made with intention. Hosted free on GitHub Pages.</span><a href="#home">Back to top ↑</a></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navlinks=document.getElementById('navlinks');
+    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open?'true':'false');menuBtn.textContent=open?'CLOSE −':'MENU +'});
+    navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='MENU +'}));
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
