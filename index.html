@@ -27,9 +27,16 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;transition:.2s}
     .btn.primary{background:var(--accent);color:#101010;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
-    .hero-art{position:relative;min-height:410px;background:#171715;overflow:hidden;border:1px solid #30302b}
-    .hero-art img{width:100%;height:410px;object-fit:cover;filter:grayscale(35%);opacity:.8}
-    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
+    .hero-art{position:relative;min-height:410px;height:410px;background:#171715;overflow:hidden;border:1px solid #30302b;isolation:isolate}
+    .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(22%);opacity:.82;transition:opacity .42s ease,filter .42s ease;will-change:opacity}
+    .hero-art img.hero-photo-hover{opacity:0;filter:grayscale(8%)}
+    .hero-art:after{content:"";position:absolute;z-index:2;pointer-events:none;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
+    .hero-art:before{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;background:#f1f0e9;opacity:0}
+    .hero-art:hover img.hero-photo-hover{opacity:.92}
+    .hero-art:hover img.hero-photo-base{opacity:0}
+    .hero-art:hover:before{animation:photo-flash .42s ease-out}
+    @keyframes photo-flash{0%{opacity:0}18%{opacity:.13}100%{opacity:0}}
+    @media (prefers-reduced-motion:reduce){.hero-art img{transition:none}.hero-art:hover:before{animation:none}}
     .art-label{position:absolute;z-index:1;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
     .art-label strong{color:var(--accent)}
     .ticker{border-block:1px solid var(--line);padding:15px 0;color:#c8c4bc;font-size:10px;letter-spacing:.2em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
@@ -111,8 +118,8 @@
     .tool-category h3{font-size:16px;font-weight:500;margin:0 0 16px;color:var(--text)}
     .tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
     .tool-card{min-height:92px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:16px;min-width:0;color:var(--text);font-size:13px}
-    .tool-card img{width:25px;height:25px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.88;flex:0 0 25px}
-    .tool-monogram{display:flex;align-items:center;justify-content:center;width:25px;height:25px;flex:0 0 25px;border:1px solid var(--accent);color:var(--accent);font-size:9px;font-weight:700}
+    .tool-card img{width:25px;height:25px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.88;flex:0 0 25px;position:relative;z-index:1}
+    .tool-monogram{display:flex;align-items:center;justify-content:center;width:25px;height:25px;flex:0 0 25px;border:1px solid var(--accent);color:var(--accent);font-size:9px;font-weight:700;letter-spacing:-.04em}
     .tool-card span:last-child{line-height:1.35;overflow-wrap:anywhere}
     @media(max-width:760px){.about-layout{grid-template-columns:1fr;gap:24px}.background-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-section{padding-top:72px;padding-bottom:72px}}
 
@@ -267,29 +274,29 @@
       <div class="tool-category">
         <h3>Editing &amp; Design Software</h3>
         <div class="tool-grid">
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobepremierepro" alt="" loading="lazy" onerror="this.style.display='none'"><span>Premiere Pro</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobephotoshop" alt="" loading="lazy" onerror="this.style.display='none'"><span>Photoshop</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobeaftereffects" alt="" loading="lazy" onerror="this.style.display='none'"><span>After Effects</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobeillustrator" alt="" loading="lazy" onerror="this.style.display='none'"><span>Illustrator</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobelightroom" alt="" loading="lazy" onerror="this.style.display='none'"><span>Lightroom</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/davinciresolve" alt="" loading="lazy" onerror="this.style.display='none'"><span>DaVinci Resolve</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/capcut" alt="" loading="lazy" onerror="this.style.display='none'"><span>CapCut</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/canva" alt="" loading="lazy" onerror="this.style.display='none'"><span>Canva</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Pr</span><img src="https://cdn.simpleicons.org/adobepremierepro" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Premiere Pro</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ps</span><img src="https://cdn.simpleicons.org/adobephotoshop" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Photoshop</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ae</span><img src="https://cdn.simpleicons.org/adobeaftereffects" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>After Effects</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ai</span><img src="https://cdn.simpleicons.org/adobeillustrator" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Illustrator</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Lr</span><img src="https://cdn.simpleicons.org/adobelightroom" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Lightroom</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">DR</span><img src="https://cdn.simpleicons.org/davinciresolve" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>DaVinci Resolve</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">CC</span><img src="https://cdn.simpleicons.org/capcut" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>CapCut</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">Ca</span><img src="https://cdn.simpleicons.org/canva" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Canva</span></div>
         </div>
       </div>
       <div class="tool-category">
         <h3>Stock, AI &amp; Workflow Resources</h3>
         <div class="tool-grid">
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/artlist" alt="" loading="lazy" onerror="this.style.display='none'"><span>Artlist</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/envato" alt="" loading="lazy" onerror="this.style.display='none'"><span>Envato</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/storyblocks" alt="" loading="lazy" onerror="this.style.display='none'"><span>Storyblocks</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/elevenlabs" alt="" loading="lazy" onerror="this.style.display='none'"><span>ElevenLabs</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/openai" alt="" loading="lazy" onerror="this.style.display='none'"><span>ChatGPT</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" onerror="this.style.display='none'"><span>Gemini</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">A</span><img src="https://cdn.simpleicons.org/artlist" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Artlist</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">E</span><img src="https://cdn.simpleicons.org/envato" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Envato</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">SB</span><img src="https://cdn.simpleicons.org/storyblocks" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Storyblocks</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">11</span><img src="https://cdn.simpleicons.org/elevenlabs" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>ElevenLabs</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">AI</span><img src="https://cdn.simpleicons.org/openai" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>ChatGPT</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">G</span><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Gemini</span></div>
           <div class="tool-card"><span class="tool-monogram">NLM</span><span>NotebookLM</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/n8n" alt="" loading="lazy" onerror="this.style.display='none'"><span>n8n</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">n8n</span><img src="https://cdn.simpleicons.org/n8n" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>n8n</span></div>
           <div class="tool-card"><span class="tool-monogram">H</span><span>Higgsfield</span></div>
-          <div class="tool-card"><img src="https://cdn.simpleicons.org/suno" alt="" loading="lazy" onerror="this.style.display='none'"><span>Suno</span></div>
+          <div class="tool-card"><span class="tool-monogram" aria-hidden="true">S</span><img src="https://cdn.simpleicons.org/suno" alt="" loading="lazy" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'"><span>Suno</span></div>
         </div>
       </div>
     </section>
