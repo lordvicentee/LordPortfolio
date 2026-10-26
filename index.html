@@ -28,13 +28,13 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;transition:.2s}
     .btn.primary{background:var(--accent);color:#101010;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
     .hero-art{position:relative;min-height:410px;height:410px;background:#171715;overflow:hidden;border:1px solid #30302b;isolation:isolate}
-    .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(22%);opacity:.82;transition:opacity .42s ease,filter .42s ease;will-change:opacity}
+    .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(22%);opacity:.82;transition:opacity .42s ease,filter .42s ease;will-change:opacity;pointer-events:none}
     .hero-art img.hero-photo-hover{opacity:0;filter:grayscale(8%)}
     .hero-art:after{content:"";position:absolute;z-index:2;pointer-events:none;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
     .hero-art:before{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;background:#f1f0e9;opacity:0}
-    .hero-art:hover img.hero-photo-hover{opacity:.92}
-    .hero-art:hover img.hero-photo-base{opacity:0}
-    .hero-art:hover:before{animation:photo-flash .42s ease-out}
+    .hero-art:hover img.hero-photo-hover,.hero-art:focus-within img.hero-photo-hover{opacity:.92}
+    .hero-art:hover img.hero-photo-base,.hero-art:focus-within img.hero-photo-base{opacity:0}
+    .hero-art:hover:before,.hero-art:focus-within:before{animation:photo-flash .42s ease-out}
     @keyframes photo-flash{0%{opacity:0}18%{opacity:.13}100%{opacity:0}}
     @media (prefers-reduced-motion:reduce){.hero-art img{transition:none}.hero-art:hover:before{animation:none}}
     .art-label{position:absolute;z-index:1;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
@@ -144,9 +144,9 @@
         <p class="hero-copy">Video editor and creative artist working across video, color, motion graphics, and visual design.</p>
         <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a></div>
       </div>
-      <div class="hero-art">
-        <img src="BACK.jpg" alt="Video editor working at his editing workstation">
-        
+      <div class="hero-art" aria-label="Vincent at his workstation and filming with a camera">
+        <img class="hero-photo-base" src="BACK.jpg" alt="Vincent editing footage at his workstation">
+        <img class="hero-photo-hover" src="vincent-videographer.jpg" alt="Vincent filming with a camera">
       </div>
     </section>
 
