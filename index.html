@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, videographer, film restoration artist, motion designer and graphic designer.">
+  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, color grader, motion designer, videographer and graphic designer.">
   <title>Lord Vincent Yana — Video Editor & Graphics Designer</title>
   <style>
     :root{--bg:#090909;--panel:#111;--text:#f4f1eb;--muted:#a7a39d;--line:#2b2a28;--accent:#d8ff3e;--max:1180px}
@@ -87,6 +87,16 @@
     .note{font-size:12px;color:#8f8b84;margin-top:22px}
     @media(max-width:760px){.nav-inner{height:64px}.menu{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:#101010;border-bottom:1px solid var(--line);flex-direction:column;gap:17px}.navlinks.open{display:flex}.hero{padding-top:58px;grid-template-columns:1fr;gap:30px;min-height:0}.hero-art,.hero-art img{height:300px;min-height:300px}.section-head{align-items:start;flex-direction:column}.project-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:15px}.process-grid{grid-template-columns:repeat(2,1fr)}.process:nth-child(2){border-right:0}.process:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:66px 0}}
     @media(max-width:420px){.wrap{width:calc(100% - 30px)}h1{font-size:49px}.process{padding:16px}.project-info{padding:16px}}
+
+    .design-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .design-card{display:block;position:relative;background:var(--panel);border:1px solid var(--line);overflow:hidden}
+    .design-card img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .4s,filter .4s;filter:saturate(.88)}
+    .design-card:hover img{transform:scale(1.035);filter:saturate(1)}
+    .design-caption{display:block;padding:11px 13px;color:#d8d4cc;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--line)}
+    .hero-art:after{background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.35))}
+    .hero-art img{filter:grayscale(100%) brightness(.7);opacity:.88}
+    @media(max-width:760px){.design-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:480px){.design-grid{grid-template-columns:1fr 1fr;gap:10px}.design-caption{font-size:9px;padding:8px}}
   </style>
 </head>
 <body>
@@ -105,16 +115,16 @@
       <div>
         <div class="eyebrow">Independent creative professional · Philippines</div>
         <h1>LORD<br>VINCENT<br><em>YANA.</em></h1>
-        <p class="hero-copy">Video editor and visual storyteller shaping raw footage into stories with rhythm, atmosphere, and purpose. From cinematic edits to film restoration, motion graphics, and design.</p>
-        <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a><a class="btn" href="#contact">Get in touch ↗</a></div>
+        <p class="hero-copy">Video editor and creative artist working across video, color, motion graphics, and visual design.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a></div>
       </div>
       <div class="hero-art">
-        <img src="BACK.jpg" alt="Video editor working at his workstation, viewed from behind">
-        <div class="art-label"><span>Post-production / Visual storytelling</span><strong>Available for projects</strong></div>
+        <img src="vincent-videographer.jpg" alt="Lord Vincent Yana working as a videographer">
+        
       </div>
     </section>
 
-    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Film restoration</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span><b>✳</b><span>Graphic design</span></div></div>
+    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Graphic design</span><b>✳</b><span>Color grading</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span></div></div>
 
     <section class="wrap" id="work">
       <div class="section-head">
@@ -172,26 +182,65 @@
       <p class="note">These featured projects represent some of my strongest work, not my complete portfolio. More projects can be added over time. YouTube thumbnails load automatically; Facebook Reel cards link directly to Facebook.</p>
     </section>
 
-    <section class="wrap" id="thumbnails"><div class="section-head"><div><div class="eyebrow">02 / Graphic design</div><h2>Thumbnail<br>design.</h2></div><p>YouTube thumbnail designs created to communicate each video's idea at a glance through composition, typography, and visual hierarchy.</p></div><p class="note">View my thumbnail collection below. The image gallery can be added once the image files are available for the website.</p><a class="project-link" href="https://drive.google.com/drive/folders/1lBJr_wysojix_AVZompWes38fa4nYMGh?usp=sharing" target="_blank" rel="noopener noreferrer">View thumbnail collection on Google Drive ↗</a></section>
+    <section class="wrap" id="thumbnails">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Graphic design</div><h2>Posters &amp;<br>thumbnails.</h2></div>
+        <p>Visual concepts built around composition, typography, and a clear idea — from video thumbnails to posters and promotional artwork.</p>
+      </div>
+      <div class="design-grid">
+        <a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_1.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_1.png" alt="Fpj Productions 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 1</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_2.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_2.png" alt="Fpj Productions 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 2</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_3.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_3.png" alt="Fpj Productions 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 3</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_4.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_4.png" alt="Fpj Productions 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_1.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_1.jpg" alt="Gentry 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 1</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_2.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_2.jpg" alt="Gentry 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 2</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_3.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_3.jpg" alt="Gentry 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 3</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_4.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_4.jpg" alt="Gentry 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_5.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_5.jpg" alt="Gentry 5 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 5</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_6.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_6.jpg" alt="Gentry 6 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 6</span>
+        </a>
+      </div>
+    </section>
 
     <section class="about" id="about">
       <div class="wrap" style="display:contents"></div>
       <div class="wrap"><div class="eyebrow">03 / About</div><h2>Craft first.<br>Story always.</h2></div>
       <div class="wrap about-copy">
-        <p>I’m Lord Vincent Yana, a video editor and creative professional focused on turning footage into clear, engaging visual stories. My work spans editing, videography, classic film restoration, color grading, animation, and graphic design.</p>
-        <p>I care about the details that make a piece feel finished: the timing of a cut, the balance of a grade, the clarity of a title, and the emotional flow from one shot to the next.</p>
+        <p>I’m Lord Vincent Yana. I work with video, color, motion graphics, and graphic design, creating edits and visuals for digital content.</p>
+        <p>I also work with photo editing and visual assets, from clean layouts to posters and thumbnails.</p>
         <div class="skills"><span class="skill">DaVinci Resolve</span><span class="skill">Adobe Premiere Pro</span><span class="skill">Photoshop</span><span class="skill">Color Grading</span><span class="skill">Motion Graphics</span><span class="skill">Storytelling</span></div>
       </div>
     </section>
 
     <section class="wrap" id="services">
-      <div class="section-head"><div><div class="eyebrow">04 / Expertise</div><h2>From raw footage<br>to final frame.</h2></div><p>Flexible creative support for teams, brands, creators, and production workflows.</p></div>
+      <div class="section-head"><div><div class="eyebrow">04 / Expertise</div><h2>Creative work<br>across formats.</h2></div><p>Selected areas of my work and creative practice.</p></div>
       <div class="process-grid">
         <div class="process"><div class="n">01 / EDIT</div><h3>Video Editing</h3><p>Story structure, pacing, sound, captions, revisions, and delivery.</p></div>
-        <div class="process"><div class="n">02 / RESTORE</div><h3>Film Restoration</h3><p>Cleanup, color correction, stabilization, and careful visual refinement.</p></div>
-        <div class="process"><div class="n">03 / CREATE</div><h3>Motion & Design</h3><p>Animated titles, graphic assets, posters, thumbnails, and social content.</p></div>
-        <div class="process"><div class="n">04 / CAPTURE</div><h3>Videography</h3><p>Camera work and purposeful footage captured for the edit.</p></div>
+        <div class="process"><div class="n">02 / DESIGN</div><h3>Graphic Design</h3><p>Posters, thumbnails, layouts, typography, and visual concepts.</p></div>
+        <div class="process"><div class="n">03 / GRADE</div><h3>Color Grading</h3><p>Balancing color and contrast to shape the mood and look of each project.</p></div>
+        <div class="process"><div class="n">04 / MOTION</div><h3>Motion & Design</h3><p>Animated titles, motion graphics, and design elements for video.</p></div>
       </div>
+      <p class="note">Additional experience includes videography and classic film restoration.</p>
     </section>
 
     <section class="contact" id="contact">
