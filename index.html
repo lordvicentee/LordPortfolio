@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, videographer, film restoration artist, motion designer and graphic designer.">
+  <meta name="description" content="Portfolio of Lord Vincent Yana — video editor, color grader, motion designer, videographer and graphic designer.">
   <title>Lord Vincent Yana — Video Editor & Graphics Designer</title>
   <style>
     :root{--bg:#090909;--panel:#111;--text:#f4f1eb;--muted:#a7a39d;--line:#2b2a28;--accent:#d8ff3e;--max:1180px}
@@ -27,16 +27,9 @@
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border:1px solid var(--line);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;transition:.2s}
     .btn.primary{background:var(--accent);color:#101010;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
-    .hero-art{position:relative;min-height:410px;height:410px;background:#171715;overflow:hidden;border:1px solid #30302b;isolation:isolate}
-    .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(22%);opacity:.82;transition:opacity .42s ease,filter .42s ease;will-change:opacity}
-    .hero-art img.hero-photo-hover{opacity:0;filter:grayscale(8%)}
-    .hero-art:after{content:"";position:absolute;z-index:2;pointer-events:none;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
-    .hero-art:before{content:"";position:absolute;z-index:3;pointer-events:none;inset:0;background:#f1f0e9;opacity:0}
-    .hero-art:hover img.hero-photo-hover{opacity:.92}
-    .hero-art:hover img.hero-photo-base{opacity:0}
-    .hero-art:hover:before{animation:photo-flash .42s ease-out}
-    @keyframes photo-flash{0%{opacity:0}18%{opacity:.13}100%{opacity:0}}
-    @media (prefers-reduced-motion:reduce){.hero-art img{transition:none}.hero-art:hover:before{animation:none}}
+    .hero-art{position:relative;min-height:410px;background:#171715;overflow:hidden;border:1px solid #30302b}
+    .hero-art img{width:100%;height:410px;object-fit:cover;filter:grayscale(35%);opacity:.8}
+    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.86))}
     .art-label{position:absolute;z-index:1;bottom:22px;left:22px;right:22px;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
     .art-label strong{color:var(--accent)}
     .ticker{border-block:1px solid var(--line);padding:15px 0;color:#c8c4bc;font-size:10px;letter-spacing:.2em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
@@ -55,6 +48,9 @@
     .project-meta{display:flex;justify-content:space-between;gap:12px;color:var(--accent);font-size:10px;text-transform:uppercase;letter-spacing:.14em}
     .project h3{font-size:23px;letter-spacing:-.04em;margin:10px 0 6px}
     .project p{font-size:13px;color:var(--muted);margin:0}
+    .timeline-preview{margin-top:16px;border:1px solid #353530;background:#090909;padding:6px}
+    .timeline-preview img{width:100%;aspect-ratio:16/7;object-fit:cover;object-position:center;display:block}
+    .timeline-preview small{display:block;color:var(--muted);font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin:6px 2px 1px}
     .project-link{display:inline-block;margin-top:15px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid #666;padding-bottom:3px}
 
     .work-subhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:44px 0 18px}
@@ -91,6 +87,35 @@
     .note{font-size:12px;color:#8f8b84;margin-top:22px}
     @media(max-width:760px){.nav-inner{height:64px}.menu{display:block}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:#101010;border-bottom:1px solid var(--line);flex-direction:column;gap:17px}.navlinks.open{display:flex}.hero{padding-top:58px;grid-template-columns:1fr;gap:30px;min-height:0}.hero-art,.hero-art img{height:300px;min-height:300px}.section-head{align-items:start;flex-direction:column}.project-grid{grid-template-columns:1fr}.about{grid-template-columns:1fr;gap:15px}.process-grid{grid-template-columns:repeat(2,1fr)}.process:nth-child(2){border-right:0}.process:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:66px 0}}
     @media(max-width:420px){.wrap{width:calc(100% - 30px)}h1{font-size:49px}.process{padding:16px}.project-info{padding:16px}}
+
+    .design-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .design-card{display:block;position:relative;background:var(--panel);border:1px solid var(--line);overflow:hidden}
+    .design-card img{width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .4s,filter .4s;filter:saturate(.88)}
+    .design-card:hover img{transform:scale(1.035);filter:saturate(1)}
+    .design-caption{display:block;padding:11px 13px;color:#d8d4cc;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-top:1px solid var(--line)}
+    .hero-art:after{background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.42))}
+    .hero-art img{filter:saturate(.82) brightness(.78);opacity:.72}
+    @media(max-width:760px){.design-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:480px){.design-grid{grid-template-columns:1fr 1fr;gap:10px}.design-caption{font-size:9px;padding:8px}}
+
+    .about{display:block;padding:100px 0}
+    .about-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:65px;align-items:start}
+    .about-copy{min-width:0;max-width:none}
+    .background-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+    .background-item{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0;min-height:120px}
+    .background-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+    .background-item strong{font-size:15px;font-weight:500;color:var(--text)}
+    .background-item small{font-size:12px;line-height:1.5;color:var(--muted)}
+    .tools-section{padding-top:100px;padding-bottom:100px}
+    .tool-category{margin-top:34px}
+    .tool-category h3{font-size:16px;font-weight:500;margin:0 0 16px;color:var(--text)}
+    .tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .tool-card{min-height:92px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:16px;min-width:0;color:var(--text);font-size:13px}
+    .tool-card img{width:25px;height:25px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.88;flex:0 0 25px}
+    .tool-monogram{display:flex;align-items:center;justify-content:center;width:25px;height:25px;flex:0 0 25px;border:1px solid var(--accent);color:var(--accent);font-size:9px;font-weight:700}
+    .tool-card span:last-child{line-height:1.35;overflow-wrap:anywhere}
+    @media(max-width:760px){.about-layout{grid-template-columns:1fr;gap:24px}.background-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-section{padding-top:72px;padding-bottom:72px}}
+
   </style>
 </head>
 <body>
@@ -99,7 +124,7 @@
       <a class="brand" href="#home">LVY<span>®</span> / PORTFOLIO</a>
       <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">MENU +</button>
       <nav class="navlinks" id="navlinks">
-        <a href="#work">Selected work</a><a href="#about">About</a><a href="#services">Expertise</a><a href="#contact">Contact</a>
+        <a href="#work">Featured work</a><a href="#thumbnails">Thumbnails</a><a href="#about">About</a><a href="#tools">Tools</a><a href="#services">Expertise</a><a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -109,40 +134,39 @@
       <div>
         <div class="eyebrow">Independent creative professional · Philippines</div>
         <h1>LORD<br>VINCENT<br><em>YANA.</em></h1>
-        <p class="hero-copy">Video editor and visual storyteller shaping raw footage into stories with rhythm, atmosphere, and purpose. From cinematic edits to film restoration, motion graphics, and design.</p>
-        <div class="actions"><a class="btn primary" href="#work">Explore selected work ↘</a><a class="btn" href="#contact">Get in touch ↗</a></div>
+        <p class="hero-copy">Video editor and creative artist working across video, color, motion graphics, and visual design.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a></div>
       </div>
-      <div class="hero-art" aria-label="Vincent at his workstation and filming with a camera">
-        <img class="hero-photo-base" src="BACK.jpg" alt="Vincent editing footage at his workstation">
-        <img class="hero-photo-hover" src="vincent-videographer.jpg" alt="Vincent filming with a camera">
-        <div class="art-label"><span>Post-production / Visual storytelling</span><strong>Creative work</strong></div>
+      <div class="hero-art">
+        <img src="BACK.jpg" alt="Video editor working at his editing workstation">
+        
       </div>
     </section>
 
-    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Film restoration</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span><b>✳</b><span>Graphic design</span></div></div>
+    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Graphic design</span><b>✳</b><span>Color grading</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span></div></div>
 
     <section class="wrap" id="work">
       <div class="section-head">
-        <div><div class="eyebrow">01 / Selected work</div><h2>Frames that<br>tell a story.</h2></div>
-        <p>A selection of projects I've edited. These are samples of my work, not my complete portfolio; more projects can be added over time.</p>
+        <div><div class="eyebrow">01 / Featured work</div><h2>Frames that<br>tell a story.</h2></div>
+        <p>A showcase of my strongest video editing projects, from long-form storytelling to short-form social content. These examples highlight my approach to pacing, visual storytelling, and creating engaging content. This is a growing portfolio, with more work to be added over time.</p>
       </div>
 
       <div class="work-subhead">
         <h3>Long-form video</h3>
-        <p>6 selected YouTube projects</p>
+        <p>7 featured YouTube projects</p>
       </div>
       <div class="project-grid">
         <article class="project">
           <div class="project-thumb"><a href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng G video on YouTube"><img src="https://img.youtube.com/vi/eQm87oFM4N4/hqdefault.jpg" alt="YouTube thumbnail for a Pareng G video" loading="lazy"><span class="num">LONG-FORM 01</span><span class="play" aria-hidden="true">▶</span></a></div>
-          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng G</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng G — 01</h3><p>Long-form edit with a detailed multi-track Premiere Pro timeline.</p><div class="timeline-preview"><img src="timeline-pareng-g-01.png" alt="Adobe Premiere Pro timeline for Pareng G long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
           <div class="project-thumb"><a href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 1 on YouTube"><img src="https://img.youtube.com/vi/g2f7cy0VOWI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 02</span><span class="play" aria-hidden="true">▶</span></a></div>
-          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 01</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 01</h3><p>Long-form edit featuring detailed multi-track timeline work.</p><div class="timeline-preview"><img src="timeline-hayb-01.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
           <div class="project-thumb"><a href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 2 on YouTube"><img src="https://img.youtube.com/vi/pJhAQ91CZhI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 03</span><span class="play" aria-hidden="true">▶</span></a></div>
-          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 02</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 02</h3><p>Long-form edit featuring layered video, audio, and effects.</p><div class="timeline-preview"><img src="timeline-hayb-02.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 02" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
         </article>
         <article class="project">
           <div class="project-thumb"><a href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 3 on YouTube"><img src="https://img.youtube.com/vi/pfJXse28hbc/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 04</span><span class="play" aria-hidden="true">▶</span></a></div>
@@ -158,54 +182,136 @@
         </article>
       </div>
 
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer" aria-label="Watch additional long-form video on YouTube"><img src="https://img.youtube.com/vi/-xKpyuWM1YU/hqdefault.jpg" alt="YouTube thumbnail for an additional long-form video" loading="lazy"><span class="num">LONG-FORM 07</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Featured Project — 07</h3><p>Additional long-form video editing project.</p><a class="project-link" href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+      </div>
       <div class="work-subhead">
         <h3>Short-form video</h3>
-        <p>3 selected Facebook Reels</p>
+        <p>4 featured Facebook Reels</p>
       </div>
       <div class="project-grid short-grid">
-        <article class="project">
-          <a href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 1 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 01</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
-          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
-        </article>
-        <article class="project">
-          <a href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 2 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 02</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
-          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 02</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
-        </article>
-        <article class="project">
-          <a href="https://web.facebook.com/reel/1333322361732000" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb short-form reel 3 on Facebook"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 03</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a>
-          <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 03</h3><p>Selected short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1333322361732000" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div>
-        </article>
+        <article class="project"><a href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 01</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 02</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 02</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 03</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 03</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 04</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 04</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
       </div>
-      <p class="note">These are selected samples, not my complete portfolio. Additional work, including freelance projects, can be shared upon request. Video thumbnails are loaded from YouTube; Facebook Reel cards link directly to Facebook.</p>
+      <p class="note">These featured projects represent some of my strongest work, not my complete portfolio. More projects can be added over time. YouTube thumbnails load automatically; Facebook Reel cards link directly to Facebook.</p>
+    </section>
+
+    <section class="wrap" id="thumbnails">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Graphic design</div><h2>Posters &amp;<br>thumbnails.</h2></div>
+        <p>Visual concepts built around composition, typography, and a clear idea — from video thumbnails to posters and promotional artwork.</p>
+      </div>
+      <div class="design-grid">
+        <a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_1.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_1.png" alt="Fpj Productions 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 1</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_2.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_2.png" alt="Fpj Productions 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 2</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_3.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_3.png" alt="Fpj Productions 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 3</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_4.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_4.png" alt="Fpj Productions 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_1.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_1.jpg" alt="Gentry 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 1</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_2.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_2.jpg" alt="Gentry 2 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 2</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_3.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_3.jpg" alt="Gentry 3 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 3</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_4.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_4.jpg" alt="Gentry 4 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 4</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_5.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_5.jpg" alt="Gentry 5 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 5</span>
+        </a><a class="design-card" href="thumbnails/GENTRY_6.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/GENTRY_6.jpg" alt="Gentry 6 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Gentry 6</span>
+        </a>
+      </div>
     </section>
 
     <section class="about" id="about">
-      <div class="wrap" style="display:contents"></div>
-      <div class="wrap"><div class="eyebrow">02 / About</div><h2>Craft first.<br>Story always.</h2></div>
-      <div class="wrap about-copy">
-        <p>I’m Lord Vincent Yana, a video editor and creative professional focused on turning footage into clear, engaging visual stories. My work spans editing, videography, classic film restoration, color grading, animation, and graphic design.</p>
-        <p>I care about the details that make a piece feel finished: the timing of a cut, the balance of a grade, the clarity of a title, and the emotional flow from one shot to the next.</p>
-        <div class="skills"><span class="skill">DaVinci Resolve</span><span class="skill">Adobe Premiere Pro</span><span class="skill">Photoshop</span><span class="skill">Color Grading</span><span class="skill">Motion Graphics</span><span class="skill">Storytelling</span></div>
+      <div class="wrap about-layout">
+        <div class="about-heading">
+          <div class="eyebrow">03 / About</div>
+          <h2>Creative work.<br>Technical roots.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I’m Lord Vincent Yana, a video editor and creative artist working across video, color, motion graphics, photo editing, and graphic design.</p>
+          <p>I graduated with a degree in Computer Engineering and have worked as an IT personnel, supporting computer hardware, software, and technical issues. Alongside that experience, I’ve worked on freelance creative projects and production work.</p>
+          <div class="background-grid">
+            <div class="background-item"><span class="background-label">Education</span><strong>Computer Engineering Graduate</strong></div>
+            <div class="background-item"><span class="background-label">Experience</span><strong>IT Personnel</strong><small>Hardware, software, and technical support</small></div>
+            <div class="background-item"><span class="background-label">Creative work</span><strong>Freelance &amp; Production Projects</strong><small>Video editing, design, and visual content</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap tools-section" id="tools">
+      <div class="section-head">
+        <div><div class="eyebrow">04 / Tools &amp; Resources</div><h2>Tools I work<br>with.</h2></div>
+        <p>Software, creative resources, and AI tools used in my editing and design workflow.</p>
+      </div>
+      <div class="tool-category">
+        <h3>Editing &amp; Design Software</h3>
+        <div class="tool-grid">
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobepremierepro" alt="" loading="lazy" onerror="this.style.display='none'"><span>Premiere Pro</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobephotoshop" alt="" loading="lazy" onerror="this.style.display='none'"><span>Photoshop</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobeaftereffects" alt="" loading="lazy" onerror="this.style.display='none'"><span>After Effects</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobeillustrator" alt="" loading="lazy" onerror="this.style.display='none'"><span>Illustrator</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/adobelightroom" alt="" loading="lazy" onerror="this.style.display='none'"><span>Lightroom</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/davinciresolve" alt="" loading="lazy" onerror="this.style.display='none'"><span>DaVinci Resolve</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/capcut" alt="" loading="lazy" onerror="this.style.display='none'"><span>CapCut</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/canva" alt="" loading="lazy" onerror="this.style.display='none'"><span>Canva</span></div>
+        </div>
+      </div>
+      <div class="tool-category">
+        <h3>Stock, AI &amp; Workflow Resources</h3>
+        <div class="tool-grid">
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/artlist" alt="" loading="lazy" onerror="this.style.display='none'"><span>Artlist</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/envato" alt="" loading="lazy" onerror="this.style.display='none'"><span>Envato</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/storyblocks" alt="" loading="lazy" onerror="this.style.display='none'"><span>Storyblocks</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/elevenlabs" alt="" loading="lazy" onerror="this.style.display='none'"><span>ElevenLabs</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/openai" alt="" loading="lazy" onerror="this.style.display='none'"><span>ChatGPT</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/googlegemini" alt="" loading="lazy" onerror="this.style.display='none'"><span>Gemini</span></div>
+          <div class="tool-card"><span class="tool-monogram">NLM</span><span>NotebookLM</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/n8n" alt="" loading="lazy" onerror="this.style.display='none'"><span>n8n</span></div>
+          <div class="tool-card"><span class="tool-monogram">H</span><span>Higgsfield</span></div>
+          <div class="tool-card"><img src="https://cdn.simpleicons.org/suno" alt="" loading="lazy" onerror="this.style.display='none'"><span>Suno</span></div>
+        </div>
       </div>
     </section>
 
     <section class="wrap" id="services">
-      <div class="section-head"><div><div class="eyebrow">03 / Expertise</div><h2>From raw footage<br>to final frame.</h2></div><p>Flexible creative support for teams, brands, creators, and production workflows.</p></div>
+      <div class="section-head"><div><div class="eyebrow">05 / Expertise</div><h2>Creative work<br>across formats.</h2></div><p>Selected areas of my work and creative practice.</p></div>
       <div class="process-grid">
         <div class="process"><div class="n">01 / EDIT</div><h3>Video Editing</h3><p>Story structure, pacing, sound, captions, revisions, and delivery.</p></div>
-        <div class="process"><div class="n">02 / RESTORE</div><h3>Film Restoration</h3><p>Cleanup, color correction, stabilization, and careful visual refinement.</p></div>
-        <div class="process"><div class="n">03 / CREATE</div><h3>Motion & Design</h3><p>Animated titles, graphic assets, posters, thumbnails, and social content.</p></div>
-        <div class="process"><div class="n">04 / CAPTURE</div><h3>Videography</h3><p>Camera work and purposeful footage captured for the edit.</p></div>
+        <div class="process"><div class="n">02 / DESIGN</div><h3>Graphic Design</h3><p>Posters, thumbnails, layouts, typography, and visual concepts.</p></div>
+        <div class="process"><div class="n">03 / GRADE</div><h3>Color Grading</h3><p>Balancing color and contrast to shape the mood and look of each project.</p></div>
+        <div class="process"><div class="n">04 / MOTION</div><h3>Motion & Design</h3><p>Animated titles, motion graphics, and design elements for video.</p></div>
       </div>
+      <p class="note">Additional experience includes videography and classic film restoration.</p>
     </section>
 
     <section class="contact" id="contact">
       <div class="wrap">
-        <div class="eyebrow">04 / Contact</div>
-        <h2>Have a story<br>to tell?</h2>
-        <p>I'm open to long-term opportunities, creative collaborations, and projects where thoughtful editing and visual storytelling matter.</p>
-        <div class="actions"><a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="btn" href="https://www.youtube.com/" target="_blank" rel="noreferrer">YouTube ↗</a></div>
-        <p class="note" style="color:#444a2c">Before publishing: replace the sample email and social links with your real contact details.</p>
+        <div class="eyebrow">06 / Contact</div>
+        <h2>Contact<br>details.</h2>
+        
+        <div class="actions"><a class="btn primary" href="mailto:lordvincentyana12@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/lordvincentyana/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+        
       </div>
     </section>
   </main>
