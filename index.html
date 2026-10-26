@@ -98,26 +98,119 @@
     @media(max-width:760px){.design-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:480px){.design-grid{grid-template-columns:1fr 1fr;gap:10px}.design-caption{font-size:9px;padding:8px}}
 
+    .about{display:block;padding:100px 0}
+    .about-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:65px;align-items:start}
+    .about-copy{min-width:0;max-width:none}
     .background-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
-    .background-item{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;min-height:120px}
+    .background-item{border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0;min-height:120px}
     .background-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
     .background-item strong{font-size:15px;font-weight:500;color:var(--text)}
     .background-item small{font-size:12px;line-height:1.5;color:var(--muted)}
-    .tools-section{padding-top:110px;padding-bottom:110px}
+    .tools-section{padding-top:100px;padding-bottom:100px}
     .tool-category{margin-top:34px}
     .tool-category h3{font-size:16px;font-weight:500;margin:0 0 16px;color:var(--text)}
     .tool-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .tool-card{min-height:104px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:13px;padding:18px;color:var(--text);font-size:13px}
+    .tool-card{min-height:92px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:16px;min-width:0;color:var(--text);font-size:13px}
     .tool-card img{width:25px;height:25px;object-fit:contain;filter:grayscale(1) brightness(0) invert(1);opacity:.88;flex:0 0 25px}
     .tool-monogram{display:flex;align-items:center;justify-content:center;width:25px;height:25px;flex:0 0 25px;border:1px solid var(--accent);color:var(--accent);font-size:9px;font-weight:700}
-    .tool-card span:last-child{line-height:1.35}
-    @media(max-width:760px){.background-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-section{padding-top:72px;padding-bottom:72px}}
+    .tool-card span:last-child{line-height:1.35;overflow-wrap:anywhere}
+    @media(max-width:760px){.about-layout{grid-template-columns:1fr;gap:24px}.background-grid{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-section{padding-top:72px;padding-bottom:72px}}
+
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="wrap nav-inner">
-      <div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Featured short-form social video edit.</p><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_2.png" target="_blank" rel="noopener noreferrer">
+      <a class="brand" href="#home">LVY<span>®</span> / PORTFOLIO</a>
+      <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">MENU +</button>
+      <nav class="navlinks" id="navlinks">
+        <a href="#work">Featured work</a><a href="#thumbnails">Thumbnails</a><a href="#about">About</a><a href="#tools">Tools</a><a href="#services">Expertise</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow">Independent creative professional · Philippines</div>
+        <h1>LORD<br>VINCENT<br><em>YANA.</em></h1>
+        <p class="hero-copy">Video editor and creative artist working across video, color, motion graphics, and visual design.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore featured work ↘</a></div>
+      </div>
+      <div class="hero-art">
+        <img src="BACK.jpg" alt="Video editor working at his editing workstation">
+        
+      </div>
+    </section>
+
+    <div class="ticker"><div class="wrap"><span>Video editing</span><b>✳</b><span>Graphic design</span><b>✳</b><span>Color grading</span><b>✳</b><span>Motion design</span><b>✳</b><span>Videography</span></div></div>
+
+    <section class="wrap" id="work">
+      <div class="section-head">
+        <div><div class="eyebrow">01 / Featured work</div><h2>Frames that<br>tell a story.</h2></div>
+        <p>A showcase of my strongest video editing projects, from long-form storytelling to short-form social content. These examples highlight my approach to pacing, visual storytelling, and creating engaging content. This is a growing portfolio, with more work to be added over time.</p>
+      </div>
+
+      <div class="work-subhead">
+        <h3>Long-form video</h3>
+        <p>7 featured YouTube projects</p>
+      </div>
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng G video on YouTube"><img src="https://img.youtube.com/vi/eQm87oFM4N4/hqdefault.jpg" alt="YouTube thumbnail for a Pareng G video" loading="lazy"><span class="num">LONG-FORM 01</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng G — 01</h3><p>Long-form edit with a detailed multi-track Premiere Pro timeline.</p><div class="timeline-preview"><img src="timeline-pareng-g-01.png" alt="Adobe Premiere Pro timeline for Pareng G long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/eQm87oFM4N4" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 1 on YouTube"><img src="https://img.youtube.com/vi/g2f7cy0VOWI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 02</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 01</h3><p>Long-form edit featuring detailed multi-track timeline work.</p><div class="timeline-preview"><img src="timeline-hayb-01.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 01" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/g2f7cy0VOWI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 2 on YouTube"><img src="https://img.youtube.com/vi/pJhAQ91CZhI/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 03</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 02</h3><p>Long-form edit featuring layered video, audio, and effects.</p><div class="timeline-preview"><img src="timeline-hayb-02.png" alt="Adobe Premiere Pro timeline for Pareng Hayb long-form edit 02" loading="lazy"><small>Premiere Pro · Editing timeline</small></div><a class="project-link" href="https://youtu.be/pJhAQ91CZhI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer" aria-label="Watch Pareng Hayb video 3 on YouTube"><img src="https://img.youtube.com/vi/pfJXse28hbc/hqdefault.jpg" alt="YouTube thumbnail for a Pareng Hayb video" loading="lazy"><span class="num">LONG-FORM 04</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Pareng Hayb — 03</h3><p>Selected long-form video edit.</p><a class="project-link" href="https://youtu.be/pfJXse28hbc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 1 on YouTube"><img src="https://img.youtube.com/vi/kNLEOj-5TYc/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 05</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 01</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/kNLEOj-5TYc" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer" aria-label="Watch FPJ Productions project 2 on YouTube"><img src="https://img.youtube.com/vi/3psVIN8pJ80/hqdefault.jpg" alt="YouTube thumbnail for an FPJ Productions video" loading="lazy"><span class="num">LONG-FORM 06</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Film / video</span><span>YouTube</span></div><h3>FPJ Productions — 02</h3><p>Selected FPJ Productions project.</p><a class="project-link" href="https://youtu.be/3psVIN8pJ80" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-thumb"><a href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer" aria-label="Watch additional long-form video on YouTube"><img src="https://img.youtube.com/vi/-xKpyuWM1YU/hqdefault.jpg" alt="YouTube thumbnail for an additional long-form video" loading="lazy"><span class="num">LONG-FORM 07</span><span class="play" aria-hidden="true">▶</span></a></div>
+          <div class="project-info"><div class="project-meta"><span>Video editing</span><span>YouTube</span></div><h3>Featured Project — 07</h3><p>Additional long-form video editing project.</p><a class="project-link" href="https://youtu.be/-xKpyuWM1YU" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div>
+        </article>
+      </div>
+      <div class="work-subhead">
+        <h3>Short-form video</h3>
+        <p>4 featured Facebook Reels</p>
+      </div>
+      <div class="project-grid short-grid">
+        <article class="project"><a href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 01</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 01</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/2564806240667110" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 02</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 02</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/1006475328397234" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 03</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 03</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://web.facebook.com/reel/917225464671769" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+        <article class="project"><a href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer"><div class="short-thumb"><div class="short-label"><small>Facebook Reel · 04</small><strong>Pareng Hayb</strong></div><span class="play" aria-hidden="true">▶</span></div></a><div class="project-info"><div class="project-meta"><span>Short-form edit</span><span>Facebook</span></div><h3>Pareng Hayb — Reel 04</h3><p>Featured short-form social video edit.</p><a class="project-link" href="https://www.facebook.com/reel/1090354230101309" target="_blank" rel="noopener noreferrer">Watch on Facebook ↗</a></div></article>
+      </div>
+      <p class="note">These featured projects represent some of my strongest work, not my complete portfolio. More projects can be added over time. YouTube thumbnails load automatically; Facebook Reel cards link directly to Facebook.</p>
+    </section>
+
+    <section class="wrap" id="thumbnails">
+      <div class="section-head">
+        <div><div class="eyebrow">02 / Graphic design</div><h2>Posters &amp;<br>thumbnails.</h2></div>
+        <p>Visual concepts built around composition, typography, and a clear idea — from video thumbnails to posters and promotional artwork.</p>
+      </div>
+      <div class="design-grid">
+        <a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_1.png" target="_blank" rel="noopener noreferrer">
+          <img src="thumbnails/FPJ-PRODUCTIONS_1.png" alt="Fpj Productions 1 — poster and thumbnail design" loading="lazy">
+          <span class="design-caption">Fpj Productions 1</span>
+        </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_2.png" target="_blank" rel="noopener noreferrer">
           <img src="thumbnails/FPJ-PRODUCTIONS_2.png" alt="Fpj Productions 2 — poster and thumbnail design" loading="lazy">
           <span class="design-caption">Fpj Productions 2</span>
         </a><a class="design-card" href="thumbnails/FPJ-PRODUCTIONS_3.png" target="_blank" rel="noopener noreferrer">
@@ -149,15 +242,19 @@
     </section>
 
     <section class="about" id="about">
-      <div class="wrap" style="display:contents"></div>
-      <div class="wrap"><div class="eyebrow">03 / About</div><h2>Creative work.<br>Technical roots.</h2></div>
-      <div class="wrap about-copy">
-        <p>I’m Lord Vincent Yana, a video editor and creative artist working across video, color, motion graphics, photo editing, and graphic design.</p>
-        <p>I graduated with a degree in Computer Engineering and have worked as an IT personnel, supporting computer hardware, software, and technical issues. Alongside that experience, I’ve worked on freelance creative projects and production work.</p>
-        <div class="background-grid">
-          <div class="background-item"><span class="background-label">Education</span><strong>Computer Engineering Graduate</strong></div>
-          <div class="background-item"><span class="background-label">Experience</span><strong>IT Personnel</strong><small>Hardware, software, and technical support</small></div>
-          <div class="background-item"><span class="background-label">Creative work</span><strong>Freelance &amp; Production Projects</strong><small>Video editing, design, and visual content</small></div>
+      <div class="wrap about-layout">
+        <div class="about-heading">
+          <div class="eyebrow">03 / About</div>
+          <h2>Creative work.<br>Technical roots.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I’m Lord Vincent Yana, a video editor and creative artist working across video, color, motion graphics, photo editing, and graphic design.</p>
+          <p>I graduated with a degree in Computer Engineering and have worked as an IT personnel, supporting computer hardware, software, and technical issues. Alongside that experience, I’ve worked on freelance creative projects and production work.</p>
+          <div class="background-grid">
+            <div class="background-item"><span class="background-label">Education</span><strong>Computer Engineering Graduate</strong></div>
+            <div class="background-item"><span class="background-label">Experience</span><strong>IT Personnel</strong><small>Hardware, software, and technical support</small></div>
+            <div class="background-item"><span class="background-label">Creative work</span><strong>Freelance &amp; Production Projects</strong><small>Video editing, design, and visual content</small></div>
+          </div>
         </div>
       </div>
     </section>
@@ -165,7 +262,7 @@
     <section class="wrap tools-section" id="tools">
       <div class="section-head">
         <div><div class="eyebrow">04 / Tools &amp; Resources</div><h2>Tools I work<br>with.</h2></div>
-        <p>Software, creative resources, and AI tools I use in my editing and design workflow.</p>
+        <p>Software, creative resources, and AI tools used in my editing and design workflow.</p>
       </div>
       <div class="tool-category">
         <h3>Editing &amp; Design Software</h3>
@@ -212,7 +309,7 @@
       <div class="wrap">
         <div class="eyebrow">06 / Contact</div>
         <h2>Contact<br>details.</h2>
-        <p>I'm open to long-term opportunities, creative collaborations, and projects where thoughtful editing and visual storytelling matter.</p>
+        
         <div class="actions"><a class="btn primary" href="mailto:lordvincentyana12@gmail.com">Email me ↗</a><a class="btn" href="https://www.linkedin.com/in/lordvincentyana/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
         
       </div>
